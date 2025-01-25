@@ -1,0 +1,56 @@
+-- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: inventory_management_system
+-- ------------------------------------------------------
+-- Server version	8.0.40
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `delivery`
+--
+
+DROP TABLE IF EXISTS `delivery`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `delivery` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `sale_id` int NOT NULL,
+  `warehouse_id` int NOT NULL,
+  `delivery_date` date NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sale_id` (`sale_id`),
+  KEY `warehouse_id` (`warehouse_id`),
+  CONSTRAINT `delivery_ibfk_2` FOREIGN KEY (`warehouse_id`) REFERENCES `warehouse` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `delivery`
+--
+
+LOCK TABLES `delivery` WRITE;
+/*!40000 ALTER TABLE `delivery` DISABLE KEYS */;
+INSERT INTO `delivery` VALUES (1,1,1,'2024-01-17'),(2,2,2,'2024-02-22'),(3,3,3,'2024-03-12'),(4,4,4,'2024-04-07'),(5,5,1,'2024-05-17'),(6,6,2,'2024-06-27'),(7,7,3,'2024-07-12'),(8,8,4,'2024-08-20'),(9,9,1,'2024-09-07'),(10,10,2,'2024-10-03'),(11,11,3,'2024-10-25'),(12,12,4,'2024-11-12'),(13,13,1,'2024-12-03'),(14,14,2,'2024-12-18'),(15,15,3,'2025-01-08'),(16,16,4,'2024-01-22'),(17,17,1,'2024-02-18'),(18,18,2,'2024-03-15'),(19,19,3,'2024-04-10'),(20,20,4,'2024-05-20'),(21,21,1,'2024-06-05'),(22,22,2,'2024-07-17'),(23,23,3,'2024-08-22'),(24,24,4,'2024-09-10'),(25,25,1,'2024-10-20'),(26,26,2,'2024-11-06'),(27,27,3,'2024-12-15'),(28,28,4,'2024-01-25'),(29,29,1,'2024-02-10'),(30,30,2,'2024-03-03'),(31,31,3,'2024-04-25'),(32,32,4,'2024-05-09'),(33,33,1,'2024-06-01'),(34,34,2,'2024-07-25'),(35,35,3,'2024-08-30'),(36,36,4,'2024-09-15'),(37,37,1,'2024-10-10'),(38,38,2,'2024-11-22'),(39,39,3,'2024-12-05'),(40,40,4,'2025-01-12'),(41,41,1,'2024-01-17'),(42,42,2,'2024-02-25'),(43,43,3,'2024-03-18'),(44,44,4,'2024-04-12'),(45,45,1,'2024-05-23'),(46,46,2,'2024-06-15'),(47,47,3,'2024-07-20'),(48,48,4,'2024-08-15'),(49,49,1,'2024-09-25'),(50,50,2,'2024-10-05');
+/*!40000 ALTER TABLE `delivery` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-01-25 23:40:47
